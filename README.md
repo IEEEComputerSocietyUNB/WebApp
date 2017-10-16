@@ -38,7 +38,7 @@ $ pip install django~=1.9.0
 ### Create
 
 ```
-$ python manage.py makemigrations blog
+$ python manage.py makemigrations
 ```
 
 ### Update database
