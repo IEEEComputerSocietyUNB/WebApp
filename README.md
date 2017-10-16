@@ -7,46 +7,55 @@ WebApp for IEEE Computer Society Student Branch UnB (University of Brasília).
 | Date       | Description          |
 | ---------- | -------------------- |
 | 01/08/2017 | Init                 |
-| 16/10/2017 | Init ofBack-end      |
-| 30/11/2017 | Demo com Ulisses     |
+| 16/10/2017 | Init of Back-end     |
+| 30/11/2017 | Demo with Ulisses    |
+
+## URLS
+
+```
+/ -> Home with a list of posts
+/post/X/ -> The post X detail or 404
+/post/new/ -> New post
+/post/X/edit/ -> Edit the post X
+```
 
 ## Configuration
 
 ### Start VE
 
-'''
+```
 $ python3 -m venv venv
 $ source venv/bin/activate
-'''
+```
 
 ### Install basic environment
 
-'''
+```
 $ pip install --upgrade pip
 $ pip install django~=1.9.0
-'''
+```
 
 ## Database
 
 ### Create
 
-'''
+```
 $ python manage.py makemigrations blog
-'''
+```
 
 ### Update database
 
-'''
+```
 $ python manage.py migrate
-'''
+```
 
 ## Run
 
 After run the command bellow the server will be up on the address http://127.0.0.1:8000/.
 
-'''
+```
 $ python manage.py runserver
-'''
+```
 
 ## Team
 
