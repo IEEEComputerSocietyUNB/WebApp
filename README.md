@@ -8,14 +8,8 @@ WebApp for IEEE Computer Society Student Branch UnB (University of Brasília).
 | ---------- | -------------------- |
 | 01/08/2017 | Init                 |
 | 16/10/2017 | Init of Back-end     |
+| 16/10/2017 | Deploy of the WebApp |
 | 30/11/2017 | Demo with Ulisses    |
-
-## URLS
-
-```
-/ -> Home with a list of posts
-/post/new/ -> New post
-```
 
 ## Configuration
 
@@ -28,7 +22,7 @@ $ source venv/bin/activate
 
 ## Database
 
-We're using Postgres 9.5.4.
+We're using Postgres.
 
 ### Create and update on Django
 
@@ -39,11 +33,15 @@ $ python manage.py migrate
 
 ## Server
 
-We're using Heroku.
+We're using Heroku > https://ieeecsunb.herokuapp.com.
 
 ```
 $ heroku login
 $ git push heroku master
+$ heroku ps:scale web=1 # one dyno
+$ heroku open
+$ heroku run python manage.py migrate
+$ heroku run python manage.py createsuperuser
 ```
 
 ## Run
