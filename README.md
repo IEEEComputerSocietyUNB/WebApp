@@ -41,7 +41,6 @@ $ git push heroku master
 $ heroku ps:scale web=1 # one dyno
 $ heroku open
 $ heroku run python manage.py migrate
-$ heroku run python manage.py createsuperuser
 ```
 
 ## Run
