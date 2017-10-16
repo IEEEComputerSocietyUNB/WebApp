@@ -4,10 +4,10 @@ WebApp for IEEE Computer Society Student Branch UnB (University of Brasília).
 
 ## Schedule
 
-| Data       | Descrição            |
+| Date       | Description          |
 | ---------- | -------------------- |
-| 01/08/2017 | Init               |
-| 16/10/2017 | Início do Back-end   |
+| 01/08/2017 | Init                 |
+| 16/10/2017 | Init ofBack-end      |
 | 30/11/2017 | Demo com Ulisses     |
 
 ## Configuration
@@ -24,16 +24,6 @@ $ source venv/bin/activate
 '''
 $ pip install --upgrade pip
 $ pip install django~=1.9.0
-'''
-
-### Start Django project
-
-The first command start the project and the second create a module to act like a blog.
-
-'''
-$ django-admin startproject proj .
-$ python manage.py startapp blog
-$ python manage.py createsuperuser
 '''
 
 ## Database
@@ -58,10 +48,9 @@ After run the command bellow the server will be up on the address http://127.0.0
 $ python manage.py runserver
 '''
 
+## Team
 
-## Equipe responsável
-
-- Gerentes do projeto :
+- Project managers :
   - Dayanne Fernandes da Cunha
     - E-mail: dayannefernandesc@gmail.com
     - GitHub: [Dayof](https://github.com/Dayof)
