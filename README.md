@@ -14,9 +14,7 @@ WebApp for IEEE Computer Society Student Branch UnB (University of Brasília).
 
 ```
 / -> Home with a list of posts
-/post/X/ -> The post X detail or 404
 /post/new/ -> New post
-/post/X/edit/ -> Edit the post X
 ```
 
 ## Configuration
