@@ -26,25 +26,23 @@ $ python3 -m venv venv
 $ source venv/bin/activate
 ```
 
-### Install basic environment
-
-```
-$ pip install --upgrade pip
-$ pip install django~=1.9.0
-```
-
 ## Database
 
-### Create
+We're using Postgres 9.5.4.
+
+### Create and update on Django
 
 ```
 $ python manage.py makemigrations
-```
-
-### Update database
-
-```
 $ python manage.py migrate
+```
+
+## Server
+
+We're using Heroku.
+
+```
+$ heroku login
 ```
 
 ## Run
