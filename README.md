@@ -43,6 +43,7 @@ We're using Heroku.
 
 ```
 $ heroku login
+$ git push heroku master
 ```
 
 ## Run
