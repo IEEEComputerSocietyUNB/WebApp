@@ -22,7 +22,8 @@ $ source venv/bin/activate
 
 ## Database
 
-We're using Postgres.
+We're using Postgres. Therefore, install [Postgres](https://www.postgresql.org/download/).
+After installation, the port selected for the project is 5432.
 
 ### Create and update on Django
 
@@ -45,7 +46,7 @@ $ heroku run python manage.py migrate
 
 ## Run
 
-After run the command bellow the server will be up on the address http://127.0.0.1:8000/.
+After running the command below the server will be up on the address http://127.0.0.1:8000/.
 
 ```
 $ python manage.py runserver
