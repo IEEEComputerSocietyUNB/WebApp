@@ -6,3 +6,5 @@
 - [ ] Fazer setup do React
 - [ ] Fazer página de calendário (@alexandrebarbaruiva)
 - [ ] Fazer templates de Bootstrap (@ishiikurisu)
+- [ ] Estudar sistema de templates do Django (@alexandrebarbaruiva, @ishiikurisu)
+- [ ] Criar uma página principal

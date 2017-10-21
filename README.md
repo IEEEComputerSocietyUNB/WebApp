@@ -20,6 +20,12 @@ $ python3 -m venv venv
 $ source venv/bin/activate
 ```
 
+## Installing the requirements
+
+```
+pip install -r requirements.txt
+```
+
 ## Database
 
 We're using Postgres. Therefore, install [Postgres](https://www.postgresql.org/download/).
