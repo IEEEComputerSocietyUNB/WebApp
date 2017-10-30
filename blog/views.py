@@ -82,3 +82,6 @@ def post_remove(request, pk):
     post = get_object_or_404(Post, pk=pk)
     post.delete()
     return redirect('post_list')
+
+def calendar_page(request):
+    return render(request, 'blog/calendar.html', {'month_year': 'October/2017', 'previous_month': 'September', 'next_month': 'November'})

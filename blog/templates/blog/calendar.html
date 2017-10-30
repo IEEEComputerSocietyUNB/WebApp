@@ -1,5 +1,5 @@
 {% extends 'blog/base.html' %}
-{% block calendar %}
+{% block content %}
 <h1>Calendar</h1>
 <table class="calendar">
     <tr>
@@ -28,18 +28,19 @@
         <th>F</th>
         <th>S</th>
     </tr>
-    {{#each weeks}}
+    <!-- TODO Fix this thing -->
+    {% for week in weeks %}
         <tr>
-        {{#each this}}
+        {% for day in week %}
             <td>
-                {{#unless today}}
+                {% if not day.today %}
                     {{../day}}
-                {{else}}
+                {% else %}
                     <span class="calendar__today circle">{{../day}}</span>
-                {{/unless}}
+                {% endif %}
             </td>
-        {{/each}}
+        {% endfor %}
         </tr>
-    {{/each}}
+    {% endfor %}
 </table>
 {% endblock %}
