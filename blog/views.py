@@ -83,5 +83,9 @@ def post_remove(request, pk):
     post.delete()
     return redirect('post_list')
 
+def home_page(request):
+    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    return render(request, 'blog/home.html', {'posts': posts})
+
 def calendar_page(request):
     return render(request, 'blog/calendar.html', {'month_year': 'October/2017', 'previous_month': 'September', 'next_month': 'November'})
