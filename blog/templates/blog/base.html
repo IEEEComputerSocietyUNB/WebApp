@@ -4,13 +4,15 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="Site da CS UnB">
         <meta name="author" content="CS UnB">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
         <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="{% static 'css/master.css' %}">
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{% static 'css/Footer-white.css' %}">
         <title>Computer Society UnB</title>
     </head>
     <body>
@@ -48,7 +50,7 @@
                         {% else %}
                             <li class="nav-item">
                                 <!-- TODO: Fix login item with lock icon -->
-                                <a href="{% url 'login' %}" class="nav-link">Login</a>
+                                <a href="{% url 'login' %}" class="nav-link"><i class="fa fa-lock" aria-hidden="true"></i></a>
                             </li>
                         {% endif %}
                     </ul>
@@ -65,6 +67,19 @@
             {% block content %}
             {% endblock %}
         </div>
+
+        <!--Footer-->
+        <footer id="myFooter">
+            <div class="footer-social">
+                <a href="https://www.facebook.com/IEEEComputerSocietyUnB/" class="social-icons"><i class="fa fa-facebook"></i></a>
+                <a href="https://t.me/planetcodingdojounb" class="social-icons"><i class="fa fa-google-plus"></i></a>
+                <a href="https://twitter.com/lalalalalalalalalala" class="social-icons"><i class="fa fa-twitter"></i></a>
+            </div>
+            <div class="container">
+                <p class="footer-copyright">© 2017 Computer Society UnB</p>
+            </div>
+        </footer>
+        <!--/Footer-->
 
         <script src="https://code.jquery.com/jquery-3.2.1.min.js" charset="utf-8"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
