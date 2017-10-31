@@ -30,7 +30,7 @@
                             <a class="nav-link" href="/calendar">Calendário</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/posts">Blog</a>
+                            <a class="nav-link" href="/posts">Notícias</a>
                         </li>
                         {% if user.is_authenticated %}
                             <li>
@@ -46,8 +46,9 @@
                                 <a href="{% url 'logout' %}">Log out</a>
                             </li>
                         {% else %}
-                            <li>
-                                <a href="{% url 'login' %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a>
+                            <li class="nav-item">
+                                <!-- TODO: Fix login item with lock icon -->
+                                <a href="{% url 'login' %}" class="nav-link">Login</a>
                             </li>
                         {% endif %}
                     </ul>
@@ -61,10 +62,8 @@
 
         <!-- Page Content -->
         <div class="content container">
-            <div class="row">
-                {% block content %}
-                {% endblock %}
-            </div>
+            {% block content %}
+            {% endblock %}
         </div>
 
         <script src="https://code.jquery.com/jquery-3.2.1.min.js" charset="utf-8"></script>

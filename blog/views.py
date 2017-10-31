@@ -88,5 +88,8 @@ def home_page(request):
     return render(request, 'blog/home.html', {'posts': posts})
 
 def calendar_page(request):
-    # TODO: @BACK get date time 
+    # TODO: @BACK get date time
     return render(request, 'blog/calendar.html', {'month_year': 'October/2017', 'previous_month': 'September', 'next_month': 'November'})
+
+def about_page(request):
+    return render(request, 'blog/about.html')
