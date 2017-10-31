@@ -5,10 +5,17 @@ from django.shortcuts import redirect
 from django.utils import timezone
 from .models import Post, Comment
 
-def post_list(request):
+def home(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()
                                 ).order_by('published_date')
-    return render(request, 'blog/post_list.html', {'posts': posts})
+    return render(request, 'blog/home.html', {'posts': posts})
+
+def calendar(request):
+    # TODO: @BACK get date time
+    return render(request, 'blog/calendar.html', {'month_year': 'October/2017', 'previous_month': 'September', 'next_month': 'November'})
+
+def about(request):
+    return render(request, 'blog/about.html')
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
@@ -82,14 +89,3 @@ def post_remove(request, pk):
     post = get_object_or_404(Post, pk=pk)
     post.delete()
     return redirect('post_list')
-
-def home_page(request):
-    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-    return render(request, 'blog/home.html', {'posts': posts})
-
-def calendar_page(request):
-    # TODO: @BACK get date time
-    return render(request, 'blog/calendar.html', {'month_year': 'October/2017', 'previous_month': 'September', 'next_month': 'November'})
-
-def about_page(request):
-    return render(request, 'blog/about.html')
