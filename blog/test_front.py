@@ -30,7 +30,7 @@ class TestSelenium(TestCase):
         self.assertTrue("Computer Society" in self.driver.title)
 
     def test_check_if_calendar_page_exists(self):
-        page = self.page + '/calendario'
+        page = self.page + '/calendar'
         status = requests.get(page).status_code
         self.driver.get(page)
         self.assertEqual(status, 200)
