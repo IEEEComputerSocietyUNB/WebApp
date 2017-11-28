@@ -53,18 +53,18 @@
 }
 
 #myFooter .fa-facebook:hover{
-   color: #2b55ff;
+   color: #000000;
 }
 
 #myFooter .fa-facebook:focus{
-    color: #2b55ff; 
+    color: #ffffff;
 }
 
-#myFooter .fa-google-plus:hover{
-    color:red;
+#myFooter .fa-telegram:hover{
+    color:blue;
 }
 
-#myFooter .fa-google-plus:focus{
+#myFooter .fa-telegram:focus{
     color:red;
 }
 

@@ -28,5 +28,19 @@
         <th>F</th>
         <th>S</th>
     </tr>
+    <!-- TODO Fix this thing -->
+    {% for week in weeks %}
+        <tr>
+        {% for day in week %}
+            <td>
+                {% if not day.today %}
+                    {{../day}}
+                {% else %}
+                    <span class="calendar__today circle">{{../day}}</span>
+                {% endif %}
+            </td>
+        {% endfor %}
+        </tr>
+    {% endfor %}
 </table>
 {% endblock %}
