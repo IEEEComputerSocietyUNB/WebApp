@@ -70,7 +70,7 @@
                 <tr>
                     <td>29</td>
                     <td>30</td>
-                    <td>31</td>
+                    <td><button type="button" onclick="chama_eventos_do_dia(31, '{{month_year}}')">31</button></td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -79,10 +79,12 @@
             </table>
         </div>
         <div class="col-md-8">
-            <h1>Clique no dia desejado!</h1>
+            <h1>{{day_month}}</h1>
+            <div class="" id="eventos-do-dia">
+
+            </div>
         </div>
     </div>
 </div>
-
 
 {% endblock %}
