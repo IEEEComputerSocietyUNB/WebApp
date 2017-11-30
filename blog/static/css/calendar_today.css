@@ -1,1 +1,11 @@
+.calendar-button {
+    border: none;
+    background: none;
+}
 
+.calendar-button:hover,
+.calendar-button:focus {
+    border: none;
+    background: none;
+    color: blue;
+}
