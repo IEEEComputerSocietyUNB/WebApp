@@ -5,6 +5,9 @@ function chama_eventos_do_dia(dia, mesano){
     }
 }
 
+/**
+ * Turns a number into a human readable representation.
+ */
 function number_to_month(n) {
     var months = [
         'Janeiro',
@@ -24,10 +27,16 @@ function number_to_month(n) {
     return months[n];
 }
 
+/**
+ * Replaces the current calendar with a newly generated one.
+ */
 function replace_calendar(year, month) {
     document.getElementById('calendar_placeholder').innerHTML = draw_calendar(year, month);
 }
 
+/**
+ * Creates a calendar based on the given year and month.
+ */
 function draw_calendar(year, month) {
     var outlet = '<table class="calendar" id="calendar">';
 
@@ -47,9 +56,42 @@ function draw_calendar(year, month) {
         </button>
     </th>`
 
-    // TODO Generate the rest of the table
+    // Generating weekdays for calendar
+    var first_day_of_the_month = new Date(year, month);
+    var first_weekday = first_day_of_the_month.getDay();
+    var number_of_days = new Date(year, month, 0).getDate();
+    var current_day = 1;
+    var table = `<tr>
+        <th>D</th>
+        <th>S</th>
+        <th>T</th>
+        <th>Q</th>
+        <th>Q</th>
+        <th>S</th>
+        <th>S</th>
+    </tr>`
+    console.log(number_of_days);
+    console.log(first_day_of_the_month);
 
+    // -- Drawing first line
+    var line = "<tr>"
+    for (var i = 0; i < 7; ++i) {
+        if (i < first_weekday) {
+            line += "<td></td>";
+        } else {
+            line += "<td>" + current_day + "</td>";
+            current_day++;
+        }
+    }
+    line += "</tr>";
+    table += line;
+
+    // -- Drawing following lines
+    line = "";
+
+    // Consolidating HTML
     outlet += header;
+    outlet += table;
     return outlet;
 }
 
@@ -132,5 +174,5 @@ function generate_raw_calendar() {
 var placeholder = document.getElementById('calendar_placeholder');
 if (placeholder.innerHTML.trim().length === 0) {
     var today = new Date(Date.now());
-    placeholder.innerHTML = draw_calendar(today.getYear() + 1900, today.getMonth());
+    replace_calendar(today.getYear() + 1900, today.getMonth());
 }
