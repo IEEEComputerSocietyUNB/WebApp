@@ -35,6 +35,32 @@ function replace_calendar(year, month) {
 }
 
 /**
+ * List events for a day.
+ * TODO Implement me, please!
+ */
+function replace_events(year, month, day) {
+    var placeholder = document.getElementById('eventos-do-dia');
+    placeholder.innerHTML = "<h3>" + day + " de " + number_to_month(month) + " de " + year + "</h3>" +
+                            "<p>" +
+                            "   Ainda temos muita coisa para fazer!" +
+                            "</p>";
+    var button = document.getElementById('button' + year + month + day);
+    button.classList.add('selected-day');
+}
+
+/**
+ * Creates a button for the given day so it can be added to calendar.
+ */
+function generate_daily_button(year, month, day) {
+    var html = "<button class='calendar-button' " +
+                       "id='button" + year + month + day + "' " +
+                       "onclick='replace_events(" + year + ", " + month + ", " + day + ")' >" +
+                            day +
+               "</button>";
+    return html
+}
+
+/**
  * Creates a calendar based on the given year and month.
  */
 function draw_calendar(year, month) {
@@ -77,7 +103,7 @@ function draw_calendar(year, month) {
         if (i < first_weekday) {
             line += "<td></td>";
         } else {
-            line += "<td>" + current_day + "</td>";
+            line += "<td>" + generate_daily_button(year, month, current_day) + "</td>";
             current_day++;
         }
     }
@@ -89,7 +115,7 @@ function draw_calendar(year, month) {
         line = "<tr>";
         for (i = 0; i < 7; ++i) {
             if (current_day <= number_of_days) {
-                line += "<td>" + current_day + "</td>";
+                line += "<td>" + generate_daily_button(year, month, current_day) + "</td>";
             } else {
                 line += "<td></td>";
             }
@@ -108,5 +134,5 @@ function draw_calendar(year, month) {
 var placeholder = document.getElementById('calendar_placeholder');
 if (placeholder.innerHTML.trim().length === 0) {
     var today = new Date(Date.now());
-    replace_calendar(today.getYear() + 1900, today.getMonth());
+    replace_calendar(today.getFullYear(), today.getMonth());
 }

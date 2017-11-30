@@ -9,3 +9,8 @@
     background: none;
     color: blue;
 }
+
+.selected-day {
+    border: none;
+    color: black;
+}
