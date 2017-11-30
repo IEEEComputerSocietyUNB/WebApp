@@ -24,21 +24,32 @@ function number_to_month(n) {
     return months[n];
 }
 
+function replace_calendar(year, month) {
+    document.getElementById('calendar_placeholder').innerHTML = draw_calendar(year, month);
+}
+
 function draw_calendar(year, month) {
-    var previous_month = month-1;
-    var previous_year = year;
     var outlet = '<table class="calendar" id="calendar">';
 
     // Generating header
-    header = `<tr>
+    var previous_month = ((month-1) < 0)? 11 : month-1;
+    var previous_year = ((month-1) < 0)? year-1 : year;
+    var next_month = ((month+1) > 11)? 0 : month + 1;
+    var next_year = ((month+1) > 11)? year+1 : year;
+    var header = `<tr>
     <th colspan="7">
-        <button class="calendar-button" onclick="` + + `"">
+        <button class="calendar-button" onclick="replace_calendar(` + previous_year + ', ' + previous_month + `);">
             <i class="fa fa-chevron-left" aria-hidden="true"></i>
         </button>
-        <b>` + number_to_month(month) + '/' + year + `</b>`
+        <b>` + number_to_month(month) + '/' + year + `</b>
+        <button class="calendar-button" onclick="replace_calendar(` + next_year + ', ' + next_month + `);">
+            <i class="fa fa-chevron-right" aria-hidden="true"></i>
+        </button>
+    </th>`
 
     // TODO Generate the rest of the table
 
+    outlet += header;
     return outlet;
 }
 
@@ -121,5 +132,5 @@ function generate_raw_calendar() {
 var placeholder = document.getElementById('calendar_placeholder');
 if (placeholder.innerHTML.trim().length === 0) {
     var today = new Date(Date.now());
-    placeholder.innerHTML = draw_calendar(today.year, today.month);
+    placeholder.innerHTML = draw_calendar(today.getYear() + 1900, today.getMonth());
 }
