@@ -3,14 +3,13 @@
     background: none;
 }
 
-.calendar-button:hover,
-.calendar-button:focus {
+.calendar-button:hover, .calendar-button:focus {
     border: none;
     background: none;
-    color: blue;
+    color: red;
 }
 
 .selected-day {
     border: none;
-    color: black;
+    color: green;
 }
